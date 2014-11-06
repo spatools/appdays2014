@@ -43,7 +43,24 @@ module.exports = function (grunt) {
                         compress: {
                             global_defs: {
                                 DEBUG: false,
-                                CORDOVA: true
+                                CORDOVA: true,
+                                WIN8: false
+                            }
+                        },
+                    }
+                }
+            },
+            win8: {
+                src: '<%= durandal.release.src %>',
+                options: {
+                    out: '<%= paths.cordova %>/../merges/windows8/<%= paths.js %>/app.js',
+
+                    uglify2: {
+                        compress: {
+                            global_defs: {
+                                DEBUG: false,
+                                CORDOVA: true,
+                                WIN8: true
                             }
                         },
                     }
@@ -90,7 +107,8 @@ module.exports = function (grunt) {
                     compress: {
                         global_defs: {
                             DEBUG: false,
-                            CORDOVA: false
+                            CORDOVA: false,
+                            WIN8: false
                         }
                     },
                 }
@@ -567,7 +585,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask('test', ['clean:server', 'copy:styles', 'autoprefixer:watch', 'connect:test', 'mocha']);
     grunt.registerTask('build-browser', ['clean:release', 'concurrent:release', 'concat:scripts', 'concat:styles', 'autoprefixer:release', 'htmlbuild:release', 'htmlmin:release']);
-    grunt.registerTask('build-cordova', ['clean:cordova', 'concurrent:cordova', 'concat:cordova-scripts', 'concat:cordova-styles', 'autoprefixer:cordova', 'htmlbuild:cordova', 'htmlmin:cordova', 'cordovacli:prepare']);
+    grunt.registerTask('build-cordova', ['clean:cordova', 'concurrent:cordova', 'durandal:win8', 'concat:cordova-scripts', 'concat:cordova-styles', 'autoprefixer:cordova', 'htmlbuild:cordova', 'htmlmin:cordova', 'cordovacli:prepare']);
     grunt.registerTask('build', ['build-browser', 'build-cordova']);
 
     grunt.registerTask('default', ['newer:jshint', 'test', 'build']);

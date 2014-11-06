@@ -1,4 +1,4 @@
-﻿define(['promise'], function (Promise) {
+﻿define(['promise', 'durandal/viewEngine'], function (Promise, viewEngine) {
     if (CORDOVA) {
         var isCordovaInit = false,
             cordovaResolve,
@@ -17,6 +17,15 @@
         }
     }
 
+    if (WIN8) {
+        function durandal() {
+            var parser = viewEngine.parseMarkup;
+            viewEngine.parseMarkup = function (markup) {
+                return MSApp.execUnsafeLocalFunction(function () { return parser(markup); });
+            };
+        }
+    }
+
     function base() {
         return new Promise(function (resolve) {
             require(
@@ -27,12 +36,17 @@
     }
 
     function initialize() {
+        var promise = Promise.resolve();
+
         if (CORDOVA) {
-            return ensureCordova().then(base);
+            promise = promise.then(ensureCordova);
         }
-        else {
-            return base();
+
+        if (WIN8) {
+            promise = promise.then(durandal);
         }
+
+        return promise.then(base);
     }
 
     return {

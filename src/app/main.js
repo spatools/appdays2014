@@ -29,7 +29,8 @@ requirejs.config({
 
 //>>excludeStart("build", true);
 var DEBUG = true,
-    CORDOVA = false;
+    CORDOVA = false,
+    WIN8 = false;
 //>>excludeEnd("build");
 
 define(['durandal/system', 'durandal/app', 'durandal/viewLocator', 'initializer', 'bootstrap'], function (system, app, viewLocator, initializer) {
