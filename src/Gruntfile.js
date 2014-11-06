@@ -40,7 +40,7 @@ module.exports = function (grunt) {
 
                 paths: {
                     'text': '../bower_components/requirejs-text/text',
-                    'css': '../bower_components/requirejs-css/css',
+                    'css': '../bower_components/require-css/css',
                     'css-builder': '../bower_components/require-css/css-builder',
                     'normalize': '../bower_components/require-css/normalize',
                     'durandal': '../bower_components/durandal/js',
