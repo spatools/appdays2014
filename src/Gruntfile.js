@@ -149,6 +149,18 @@ module.exports = function (grunt) {
                         dest: '<%= paths.cordova %>/<%= paths.css %>/app.css'
                     },
                     {
+                        src: '<%= paths.css %>/android.less',
+                        dest: '<%= paths.cordova %>/../merges/android/<%= paths.css %>/platform.css'
+                    },
+                    {
+                        src: '<%= paths.css %>/windows.less',
+                        dest: '<%= paths.cordova %>/../merges/windows/<%= paths.css %>/platform.css'
+                    },
+                    {
+                        src: '<%= paths.css %>/wp8.less',
+                        dest: '<%= paths.cordova %>/../merges/wp8/<%= paths.css %>/platform.css'
+                    },
+                    {
                         src: 'bower_components/bootstrap/less/bootstrap.less',
                         dest: '<%= paths.temp %>/<%= paths.css %>/bootstrap.css'
                     },

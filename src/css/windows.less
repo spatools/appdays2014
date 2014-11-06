@@ -1,0 +1,222 @@
+﻿@font-color: #000;
+@font-color-hover: rgba(0, 0, 0, 0.7);
+@font-color-active: rgba(0, 0, 0, 0.4);
+@background-color: #fff;
+@accent-color: #f39200;
+
+@font-body: "Segoe UI Semilight";
+@font-base: "Segoe UI";
+@font-head: "Segoe UI Light";
+@font-strong: "Segoe UI Semibold";
+
+@font-size-body: 11pt;
+@font-size-title: 42pt;
+@font-size-h1: 20pt;
+@font-size-h2: 14pt;
+@font-size-h3: 11pt;
+
+.win8color() {
+    color: @font-color;
+
+    &:hover {
+        color: @font-color-hover;
+    }
+
+    &:active {
+        color: @font-color-active;
+    }
+}
+
+body {
+    font-family: @font-head;
+    font-size: @font-size-body;
+    padding-top: 145px;
+    overflow-y: auto;
+}
+
+.win-settingsflyout {
+    z-index: 10004;
+}
+
+#applicationHost {
+    header.navbar {
+        background: @background-color;
+        border: 0;
+
+        .container {
+            position: relative;
+        }
+
+        .navbar-header {
+            .navbar-brand {
+                font-family: @font-head;
+                -ms-font-feature-settings: 'ss20' 1;
+                font-feature-settings: 'ss20' 1;
+                font-size: @font-size-title;
+                height: 90px;
+                line-height: 1em;
+                padding: 25px 0 5px 0;
+                .win8color();
+            }
+
+            .navbar-toggle {
+                margin-top: 15px;
+                border: 0;
+                background: none;
+                color: @font-color;
+
+                .icon-bar {
+                    background: @font-color;
+                }
+            }
+        }
+
+        #top-menu {
+            clear: both;
+
+            ul {
+                margin-left: -15px;
+
+                li {
+                    a {
+                        font-family: @font-base;
+                        text-transform: uppercase;
+                        .win8color();
+                        padding-top: 7px;
+                        padding-bottom: 7px;
+                    }
+
+                    &.active a {
+                        background: none;
+                        color: @accent-color;
+                    }
+                }
+            }
+
+            .navbar-search {
+                position: absolute;
+                top: 35px;
+                right: 0;
+
+                .form-control {
+                    margin-left: 1em;
+                }
+
+                .input-group-btn .btn-default {
+                    position: absolute;
+                    margin-top: -1em;
+                    margin-left: -1.5em;
+                    width: 1em;
+                    height: 1em;
+                    line-height: 1em;
+                    padding: 0;
+                    border: 0;
+                    min-width: 0;
+                    background: transparent;
+                }
+            }
+        }
+    }
+
+    .router-loader {
+        top: 125px;
+    }
+
+    #main {
+        .page-header {
+            &:first-child, &:first-child h1 {
+                margin-top: 0;
+            }
+
+            h1 {
+                font-family: @font-head;
+                font-size: @font-size-h1;
+                margin-bottom: 0;
+            }
+        }
+
+        h2 {
+            font-family: @font-strong;
+            font-size: @font-size-h2;
+        }
+
+        h3 {
+            font-family: @font-strong;
+            font-size: @font-size-body;
+        }
+
+        .btn {
+            padding: 10px 25px;
+        }
+    }
+
+    footer.well {
+        display: none;
+    }
+
+    pre, .well, .form-control, .input-group-btn, .btn,
+    .list-group .list-group-item, .panel {
+        border-radius: 0;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    #applicationHost {
+        header.navbar {
+            .navbar-header {
+                .navbar-brand {
+                    font-size: 30pt;
+                    line-height: 1.5em;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    body {
+        padding-top: 90px;
+    }
+    #applicationHost {
+        header.navbar {
+            .navbar-header {
+                .navbar-brand {
+                    height: 50px;
+                    font-size: 25pt;
+                    line-height: 1.5em;
+                    padding: 5px 0 5px 10px;
+                }
+            }
+
+            .navbar-search {
+                display: none;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 479px) {
+    body {
+        padding-top: 50px;
+    }
+
+    #applicationHost {
+        header.navbar {
+            .navbar-header {
+                .navbar-brand {
+                    height: auto;
+                    font-size: 15pt;
+                    line-height: 1.5em;
+                }
+
+                .navbar-toggle {
+                    margin-top: 5px;
+                }
+            }
+
+            .navbar-collapse.collapse.in {
+                border-bottom: solid 1px @font-color;
+            }
+        }
+    }
+}
