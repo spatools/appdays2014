@@ -11,14 +11,6 @@ tmp/
 .tmp/
 .temp/
 
-# Build directories
-##########################
-build/
-bld/
-dist/
-publish/
-.build/
-
 # User files
 ##########################
 *.user

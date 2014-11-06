@@ -6,7 +6,7 @@ requirejs.config({
         'plugins': '../bower_components/durandal/js/plugins',
         'transitions': '../bower_components/durandal/js/transitions',
         'knockout': '../bower_components/knockout.js/knockout.debug',
-        'jquery': '../bower_components/jquery/jquery',
+        'jquery': '../bower_components/jquery/dist/jquery',
         'bootstrap': '../bower_components/bootstrap/dist/js/bootstrap',
         'modernizr': '../bower_components/modernizr/modernizr',
         'promise': '../bower_components/promise-ext/dist/promise',
@@ -28,7 +28,8 @@ requirejs.config({
 });
 
 //>>excludeStart("build", true);
-var DEBUG = true;
+var DEBUG = true,
+    CORDOVA = false;
 //>>excludeEnd("build");
 
 define(['durandal/system', 'durandal/app', 'durandal/viewLocator', 'initializer', 'bootstrap'], function (system, app, viewLocator, initializer) {
