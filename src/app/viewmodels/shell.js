@@ -9,6 +9,7 @@
         activate: function () {
             router.map([
                 { route: '', moduleId: 'viewmodels/home', title: "Home", nav: true },
+                {"route":"about","moduleId":"viewmodels/about","title":"About","nav":true},
                 /*{durandal:routes}*/
             ]).buildNavigationModel();
             
