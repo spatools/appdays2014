@@ -10,6 +10,7 @@ requirejs.config({
         'bootstrap': '../bower_components/bootstrap/dist/js/bootstrap',
         'modernizr': '../bower_components/modernizr/modernizr',
         'promise': '../bower_components/promise-ext/dist/promise',
+        'math': '../bower_components/geomath/dist/math',
         'prism': '../bower_components/prismjs/prism',
     },
     shim: {

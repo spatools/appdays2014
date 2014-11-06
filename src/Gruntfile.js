@@ -52,6 +52,7 @@ module.exports = function (grunt) {
                     'modernizr': '../bower_components/modernizr/modernizr',
                     'promise': '../bower_components/promise-ext/dist/promise',
                     'promise-almond': '../bower_components/promise-ext/dist/promise-almond',
+                    'math': '../bower_components/geomath/dist/math',
                     'prism': '../bower_components/prismjs/prism'
                 },
 

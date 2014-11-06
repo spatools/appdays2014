@@ -10,7 +10,8 @@
     "json2": "*",
     "prismjs": "*",
     "require-css": "~0.1.7",
-    "promise-ext": "~0.3.4"
+    "promise-ext": "~0.3.4",
+    "geomath": "~0.1.0"
   },
   "devDependencies": {
     "mocha": "~1.17.1",
