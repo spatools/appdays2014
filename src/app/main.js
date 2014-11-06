@@ -27,6 +27,10 @@ requirejs.config({
     }
 });
 
+//>>excludeStart("build", true);
+var DEBUG = true;
+//>>excludeEnd("build");
+
 define(['durandal/system', 'durandal/app', 'durandal/viewLocator', 'initializer', 'bootstrap'], function (system, app, viewLocator, initializer) {
     //>>excludeStart("build", true);
     system.debug(true);
