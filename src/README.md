@@ -1,4 +1,6 @@
-# AppDays
+# TechDays 2014 - SPA
+
+TechDays 2014 - SPA is a demo application showed at Microsoft TechDays 2014.
 
 This document explain how to develop and build this application.
 
@@ -27,18 +29,26 @@ $ grunt
 
 #### Build
 
-Allow to build application : merge and minify your files into __build/__ directory.
+Allow to build application : merge and minify your files into __.build/__ directory.
 
 ```
 $ grunt build
 ```
 
-#### Test
+##### Browser only
 
 Allow to test your application : lint and test your application.
 
 ```
-$ grunt test
+$ grunt build-browser
+```
+
+##### Cordova only
+
+Allow to test your application : lint and test your application.
+
+```
+$ grunt build-cordova
 ```
 
 #### Serve
@@ -47,6 +57,14 @@ Start a mini server to test application in browser with livereload.
 
 ```
 $ grunt serve
+```
+
+#### Serve a built vesion
+
+Start a mini server to test application in browser with livereload.
+
+```
+$ grunt serve-build
 ```
 
 ## Development
