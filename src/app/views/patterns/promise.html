@@ -1,0 +1,43 @@
+<section id="page-patterns-promise" class="page">
+    <div class="page-header">
+        <h1>Promise Pattern</h1>
+    </div>
+    <h2>Promise vs callbacks</h2>
+    <p>
+        Async operation using callback pattern.
+    </p>
+    <pre><code class="language-javascript" data-bind="highlight: true">function asyncWithCallback() {
+    myAsyncFunction1(arg1, arg2, function(result) {
+        myAsyncFunction2(result, function(_result) {
+            myAsyncFunction3(_result, arg3, function(__result) {
+                // Wow ! no more !
+            }, function (error) {
+                // Error management
+            });
+        }, function (error) {
+            // Error management
+        });
+    }, function (error) {
+        // Error management
+    });
+}</code></pre>
+    <p>
+        Async operation using Promise pattern.
+    </p>
+    <pre><code class="language-javascript" data-bind="highlight: true">function asyncWithPromise() {
+    myAsyncFunction1(arg1, arg2)
+        .then(myAsyncFunction2)
+        .then(function(result) { return myAsyncFunction3(result, arg3); })
+        .catch(function(error) { /* Error Management */ });
+}</code></pre>
+    <h2>Promise in Ecmascript6</h2>
+    <p>
+        Promise Pattern is now drafted in Ecmascript6 specification.
+    </p>
+    <pre><code class="language-javascript" data-bind="highlight: true">return new Promise(function(resolve, reject) {
+	// Resolve when everything's done
+    resolve(result);
+    // Reject to stop process and throw error
+    reject(new Error("my custom error"));
+});</code></pre>
+</section>

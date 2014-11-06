@@ -1,0 +1,75 @@
+<section id="page-patterns-memoization" class="page">
+    <div class="page-header">
+        <h1>Memoization Pattern</h1>
+    </div>
+    <h2>Simple Memoization</h2>
+    <p>
+        Memoization pattern is used when a function should always return then same result in the same context.
+    </p>
+    <pre><code class="language-javascript" data-bind="highlight: true">function simpleMemoization() {
+    if (typeof arguments.callee.result === "undefined") {
+        var thatWillBeResult;
+        // ... My processing function
+
+        arguments.callee.result = thatWillBeResult;
+    }
+
+    return arguments.callee.result;
+}</code></pre>
+    <h2>Memoization using a single parameter</h2>
+    <p>
+        When a function requires a single argument, we can cache the result in an object using this argument as index.
+    </p>
+    <pre><code class="language-javascript" data-bind="highlight: true">function singleParamMemoization(param) {
+    if (typeof arguments.callee.result === "undefined") {
+        arguments.callee.result = {};
+    }
+
+    if (typeof arguments.callee.result[param] === "undefined") {
+        var thatWillBeResult;
+        // ... My processing function
+
+        arguments.callee.result[param] = thatWillBeResult;
+    }
+
+    return arguments.callee.result[param];
+}</code></pre>
+    <h2>Memoization using multiple parameter</h2>
+    <p>
+        When function accepts multiple parameters, we can cache result by using a JSON serialization of given params as index.
+    </p>
+    <pre><code class="language-javascript" data-bind="highlight: true">function multiParamMemoization() {
+    if (typeof arguments.callee.result === "undefined") {
+        arguments.callee.result = {};
+    }
+
+    if (typeof arguments.callee.result[param] === "undefined") {
+        var param = JSON.stringify(Array.prototype.slice.call(arguments)),
+            thatWillBeResult;
+
+        // ... My processing function
+
+        arguments.callee.result[param] = thatWillBeResult;
+    }
+
+    return arguments.callee.result[param];
+}</code></pre>
+    <h2>Memoization with timeout</h2>
+    <p>
+        Memoization concept could be extended to be used to cache a result for a specific period.
+    </p>
+    <pre><code class="language-javascript" data-bind="highlight: true">function timeoutMemoization() {
+    if (typeof arguments.callee.result !== "undefined") {
+        if (Date.now() < (arguments.callee.date + 5000)) {
+            return arguments.callee.result;
+        }
+    }
+
+    var thatWillBeResult;
+    // ... My processing function
+
+    argument.callee.date = Date.now();
+
+    return (arguments.callee.result = thatWillBeResult);
+}</code></pre>
+</section>

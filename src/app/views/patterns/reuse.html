@@ -1,0 +1,46 @@
+<section id="page-patterns-reuse" class="page">
+    <div class="page-header">
+        <h1>Reuse Pattern</h1>
+    </div>
+    <h2>Reuse to avoid Array creation</h2>
+    <p>
+        Array instanciation is a huge CPU consumer. Especially in long loop operations.
+    </p>
+    <pre><code class="language-javascript" data-bind="highlight: true">function translate(v, m, r) {
+    var x = v[0], y = v[1];
+
+    if (r === m) {
+        m[6] += x;
+        m[7] += y;
+        return m;
+    }
+
+    if (r === undefined)
+        r = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+    r[0] = m[0]; r[1] = m[1]; r[2] = m[2];
+    r[3] = m[3]; r[4] = m[4]; r[5] = m[5];
+    r[6] = m[6] + x;
+    r[7] = m[7] + y;
+    r[8] = 1;
+
+    return r;
+}</code></pre>
+    <h2>Reuse to avoid Object creation</h2>
+    <p>
+        Same concept.
+    </p>
+    <pre><code class="language-javascript" data-bind="highlight: true">function pointProcessing(pt, r) {
+    var ref = r || { x: 0, y: 0 },
+        tmp = { x: pt.x, y: pt.y },
+        i = 0, len = 5000;
+
+    for (; i < len; i++) {
+        // my processing function
+
+        ref.x = tmp.x;
+        ref.y = tmp.y;
+        tmp.x = tmp.y = 0;
+    }
+}</code></pre>
+</section>
