@@ -1,1 +1,1 @@
-﻿define(["./highlight"], function () { });
+﻿define(["./highlight", "./dialogs"], function () { });
