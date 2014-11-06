@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="org.spatools.appdays" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>AppDays</name>
+    <description>
+      Demo application for AppDays 2014 Session.
+    </description>
+    <author email="spa@touchify.co" href="http://github.com/spatools">
+        SPA Tools
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+</widget>

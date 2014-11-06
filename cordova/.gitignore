@@ -1,0 +1,26 @@
+# User-specific files
+*.suo
+*.user
+*.sln.docstates
+.DS_Store
+xcuserdata/
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+[Bb]uild/
+[Bb]in/
+[Oo]bj/
+
+# Windows Store app package directory
+AppPackages/
+
+# Ant Build directories
+ant-build/
+ant-gen/
+
+# Eclipse setting files 
+.settings/
+.classpath
+gen/
