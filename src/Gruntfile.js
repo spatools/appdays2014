@@ -27,7 +27,9 @@ module.exports = function (grunt) {
             dist: {
                 src: [
                     'app/**/*.*',
-                    'bower_components/durandal/js/**/*.*'
+                    'bower_components/durandal/js/**/*.*',
+                    'bower_components/promise-ext/dist/promise-almond.js',
+                    'bower_components/promise-ext/dist/promise/*.*'
                 ]
             },
             options: {
@@ -38,6 +40,9 @@ module.exports = function (grunt) {
 
                 paths: {
                     'text': '../bower_components/requirejs-text/text',
+                    'css': '../bower_components/requirejs-css/css',
+                    'css-builder': '../bower_components/require-css/css-builder',
+                    'normalize': '../bower_components/require-css/normalize',
                     'durandal': '../bower_components/durandal/js',
                     'plugins': '../bower_components/durandal/js/plugins',
                     'transitions': '../bower_components/durandal/js/transitions',
@@ -45,15 +50,21 @@ module.exports = function (grunt) {
                     'jquery': '../bower_components/jquery/jquery',
                     'bootstrap': '../bower_components/bootstrap/dist/js/bootstrap',
                     'modernizr': '../bower_components/modernizr/modernizr',
+                    'promise': '../bower_components/promise-ext/dist/promise',
+                    'promise-almond': '../bower_components/promise-ext/dist/promise-almond',
+                    'prism': '../bower_components/prismjs/prism'
                 },
 
                 shim: {
                     bootstrap: {
-                            deps: ['jquery'],
-                            exports: 'jQuery'
+                        deps: ['jquery'],
+                        exports: 'jQuery'
                     },
                     modernizr: {
-                            exports: 'Modernizr'
+                        exports: 'Modernizr'
+                    },
+                    prism: {
+                        exports: 'Prism'
                     }
                 },
 
