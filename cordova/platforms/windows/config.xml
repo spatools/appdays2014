@@ -4,10 +4,10 @@
     <preference name="windows-phone-target-version" value="8.1" />
     <name>AppDays</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+      Demo application for AppDays 2014 Session.
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+    <author email="spa@touchify.co" href="http://github.com/spatools">
+        SPA Tools
     </author>
     <content src="index.html" />
     <access origin="*" />
