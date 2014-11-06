@@ -11,7 +11,8 @@
     "prismjs": "*",
     "require-css": "~0.1.7",
     "promise-ext": "~0.3.4",
-    "geomath": "~0.1.0"
+    "geomath": "~0.1.0",
+    "jquery": "~2.1.1"
   },
   "devDependencies": {
     "mocha": "~1.17.1",
