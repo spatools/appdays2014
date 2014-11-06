@@ -53,7 +53,7 @@ module.exports = function (grunt) {
             win8: {
                 src: '<%= durandal.release.src %>',
                 options: {
-                    out: '<%= paths.cordova %>/../merges/windows8/<%= paths.js %>/app.js',
+                    out: '<%= paths.cordova %>/../merges/windows/<%= paths.js %>/app.js',
 
                     uglify2: {
                         compress: {
