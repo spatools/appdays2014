@@ -1,6 +1,6 @@
-# TechDays 2014 - SPA
+# AppDays
 
-TechDays 2014 - SPA is a demo application showed at Microsoft TechDays 2014.
+AppDays SPA is a demo application showed at AppDays 2014 conference.
 
 This document explain how to develop and build this application.
 
